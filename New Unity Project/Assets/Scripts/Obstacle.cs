@@ -5,9 +5,10 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     // Start is called before the first frame update
+    public GameObject player;
     void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -17,6 +18,11 @@ public class Obstacle : MonoBehaviour
         if (collision.tag == "Border")
         {
             Destroy(this.gameObject);
+        }
+        else if (collision.tag == "Player")
+        {
+            Destroy(player.gameObject);
+
         }
     }
 }
