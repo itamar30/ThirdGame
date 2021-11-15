@@ -8,17 +8,20 @@ public class Obstacle : MonoBehaviour
     public GameObject player;
     void Start()
     {
+        // targeting player 
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    // Update is called once per frame
+ 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Destroy obstacle when it passed the border
         if (collision.tag == "Border")
         {
             Destroy(this.gameObject);
         }
+        // destroy player when he hit the obstacle
         else if (collision.tag == "Player")
         {
             Destroy(player.gameObject);

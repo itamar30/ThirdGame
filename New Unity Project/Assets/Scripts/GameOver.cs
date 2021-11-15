@@ -6,15 +6,11 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     public GameObject gameOverPanel;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+   
+    
     void Update()
     {
+        // while Player Object is Destoryed we would like to send game over
         if(GameObject.FindGameObjectWithTag("Player") == null)
         {
             gameOverPanel.SetActive(true);
@@ -22,6 +18,7 @@ public class GameOver : MonoBehaviour
     }
     public void Restart()
     {
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

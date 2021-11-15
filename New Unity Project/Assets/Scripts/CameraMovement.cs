@@ -11,6 +11,7 @@ public class CameraMovement : MonoBehaviour
     
     void Update()
     {
+        //changing camera position every frame according 
         transform.position += new Vector3(cameraSpeed * Time.deltaTime, 0, 0);
     }
 }

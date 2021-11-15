@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-
+// objest to present text
     public Text scoreText;
     public float score;
     // Start is called before the first frame update
@@ -16,7 +16,8 @@ public class ScoreManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
+        // while player not destroyed score is up 
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
             score += 1 * Time.deltaTime;
